@@ -48,9 +48,8 @@ commands:
             then
               cd ~/project/backend
               npm install
-              Add revert code here. You can find this in the Getting Started section.
+              #Add revert code here. You can find this in the Getting Started section.
               
-            fi
             
 jobs:
   build-frontend:
