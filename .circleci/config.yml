@@ -12,8 +12,6 @@ commands:
            sudo add-apt repository -update ppa:ansible/ansible
            sudo apt install ansible -y 
 
-
-commands:
   destroy-environment:
     description: Destroy back-end and front-end cloudformation stacks given a workflow ID.
     parameters:
