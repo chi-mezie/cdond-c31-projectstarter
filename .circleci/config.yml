@@ -351,7 +351,7 @@ jobs:
           at: ~/
           
       - install_nodejs
-
+      - install_awscli
       - install_ansible
       - run:
           name: Deploy backend
@@ -452,7 +452,8 @@ workflows:
           requires: [deploy-infrastructure]
       - run-migrations:
           requires: [configure-infrastructure]
-      - deploy-frontend
+      - deploy-frontend:
+          requires: [run-migrations]
       - deploy-backend:
           requires: [run-migrations]
       # - smoke-test:
