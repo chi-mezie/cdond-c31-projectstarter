@@ -30,6 +30,7 @@ commands:
          type: string
        
     steps:
+      - install_awscli
       - run:
           name: Destroy environments
           when: on_fail
@@ -260,7 +261,7 @@ jobs:
           name: Run migrations
           command: |
             # Your code here
-            cd backend
+            mkdir backend && cd backend
             npm install 
             npm run migration > migrations_dump.txt
            
