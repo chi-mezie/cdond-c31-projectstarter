@@ -148,7 +148,7 @@ jobs:
             # Your code here
             cd backend
             npm install
-            npm run build
+            npm run test
       - save_cache:
           paths: [backend/node_modules]
           key: backend-test 
@@ -346,7 +346,7 @@ jobs:
             - "a4:9d:96:eb:ac:e1:aa:05:fb:97:f2:1d:e8:2c:0e:9c"
       - attach_workspace:
           at: ~/
-
+          
       - install_nodejs
       - install_awscli
       - install_ansible
