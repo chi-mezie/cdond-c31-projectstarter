@@ -298,13 +298,13 @@ jobs:
 
       - add_ssh_keys:
           fingerprints: 
-            - "a4:9d:96:eb:ac:e1:aa:05:fb:97:f2:1d:e8:2c:0e:9c"
+            - "de:e7:ae:56:53:0e:a1:0b:48:33:40:12:4a:31:a9:55"
       - attach_workspace:
           at: ~/
-      - install_awscli
-      - install_nodejs
-      - install_ansible
 
+      - install_nodejs
+      - install_awscli
+      - install_ansible
       - run:
           name: Get backend url
           command: |
@@ -318,8 +318,6 @@ jobs:
             echo "API_URL = ${API_URL}"
             echo API_URL="http://${BACKEND_IP}:3030" >> frontend/.env
             cat frontend/.env
-
-
       - run:
           name: Deploy frontend objects
           command: |
@@ -327,14 +325,10 @@ jobs:
             sudo npm install -g npm@latest
             rm -rf node_modules
             npm install
-            npm run test
+            npm run build
             aws s3 cp dist s3://udapeople-${CIRCLE_WORKFLOW_ID:0:7} --recursive
-
-          
-
       - destroy-environment
       - revert-migrations
-
      
                     
   deploy-backend:
