@@ -12,7 +12,7 @@ commands:
             sudo ./aws/install
             rm awscliv2.zip
             rm aws/README.md
-            aws/THIRD_PARTY_LICENSE
+            rm aws/THIRD_PARTY_LICENSE
 
   install_nodejs:
      description: Install Node.js 13
