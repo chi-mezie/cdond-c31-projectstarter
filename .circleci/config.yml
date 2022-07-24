@@ -9,7 +9,7 @@ commands:
           command: |
             rm -rf awscli-exe-linux-x86_64.zip
             rm -rf awscliv2.zip
-            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "aawscliv2.zip"
+            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "sawscliv2.zip"
             unzip sawscliv2.zip
             sudo ./aws/install
             
