@@ -12,6 +12,9 @@ commands:
             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "sawscliv2.zip"
             unzip sawscliv2.zip
             sudo ./aws/install
+            rm -rf sawscliv2.zip
+            rm aws/README.md
+             
             
            
             
