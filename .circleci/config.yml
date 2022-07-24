@@ -252,7 +252,7 @@ jobs:
           at: ~/
 
       - install_ansible
-      - install_awscli
+
 
 
       - run:
