@@ -303,7 +303,6 @@ jobs:
           at: ~/
 
       - install_nodejs
-      - install_awscli
       - install_ansible
 
       - run:
@@ -319,6 +318,8 @@ jobs:
             echo "API_URL = ${API_URL}"
             echo API_URL="http://${BACKEND_IP}:3030" >> frontend/.env
             cat frontend/.env
+            
+      - install_awscli
       - run:
           name: Deploy frontend objects
           command: |
