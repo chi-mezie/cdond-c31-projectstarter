@@ -8,12 +8,10 @@ commands:
           name: Install AWS cli
           command: |
             rm -rf awscli-exe-linux-x86_64.zip
-            rm -rf awscliv2.zip
-            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "sawscliv2.zip"
-            unzip sawscliv2.zip
+            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" 
+            unzip awscli-exe-linux-x86_64.zip
             sudo ./aws/install
-            rm -rf sawscliv2.zip
-            sed sawscliv2.zip s_awscliv2.zip
+
 
             
            
