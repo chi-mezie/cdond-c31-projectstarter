@@ -320,7 +320,7 @@ jobs:
 
       - install_nodejs
       - install_ansible
-      - install_awscli_conf
+      # - install_awscli_conf
       - run:
           name: Get backend url
           command: |
@@ -345,8 +345,7 @@ jobs:
 
             aws s3 cp dist s3://udapeople-${CIRCLE_WORKFLOW_ID:0:7} --recursive
 
-            
-            sudo rm ~/.aws/
+          
       - destroy-environment
       - revert-migrations
 
