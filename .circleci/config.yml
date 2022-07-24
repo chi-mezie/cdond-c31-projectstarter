@@ -9,25 +9,9 @@ commands:
           command: |
             rm -rf awscli-exe-linux-x86_64.zip
             rm -rf awscliv2.zip
-            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "sawscliv2.zip"
-            unzip sawscliv2.zip
-            sudo ./aws/install
-
-  install_awscli_conf:
-    description: Install AWS cli
-    steps:
-      - run:
-          name: Install AWS cli
-          command: |
-            rm -rf awscli-exe-linux-x86_64.zip
-            rm -rf awscliv2.zip
             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
             unzip awscliv2.zip
             sudo ./aws/install
-            
-
-            
-           
             
 
   install_nodejs:
@@ -55,8 +39,8 @@ commands:
     parameters:
       # Add parameter here 
       workflow_id:
-         default: "${CIRCLE_WORKFLOW_ID:0:7}"
-         type: string
+        default: "${CIRCLE_WORKFLOW_ID:0:7}"
+        type: string
        
     steps:
       - install_awscli
@@ -319,8 +303,9 @@ jobs:
           at: ~/
 
       - install_nodejs
+      - install_awscli
       - install_ansible
-      # - install_awscli_conf
+
       - run:
           name: Get backend url
           command: |
