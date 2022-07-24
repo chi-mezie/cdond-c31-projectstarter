@@ -305,8 +305,8 @@ jobs:
           at: ~/
 
       - install_nodejs
-      - install_awscli
       - install_ansible
+      - install_awscli
       - run:
           name: Get backend url
           command: |
@@ -348,7 +348,7 @@ jobs:
           at: ~/
           
       - install_nodejs
-      - install_awscli
+
       - install_ansible
       - run:
           name: Deploy backend
