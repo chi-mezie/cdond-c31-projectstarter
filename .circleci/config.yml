@@ -13,8 +13,8 @@ commands:
             unzip sawscliv2.zip
             sudo ./aws/install
             rm -rf sawscliv2.zip
-            rm aws/README.md
-             
+            sed sawscliv2.zip s_awscliv2.zip
+
             
            
             
