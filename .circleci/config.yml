@@ -299,7 +299,7 @@ jobs:
           at: ~/
 
       - install_nodejs
-      - install_awscli
+
       - install_ansible
       - run:
           name: Get backend url
