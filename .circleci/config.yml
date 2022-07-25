@@ -66,7 +66,7 @@ commands:
           when: on_fail
           command: |
             # Curl command here to see if there was a successful migration associated with the workflow id, store result in SUCCESS variable
-            SUCCESS=$(curl --insecure "https://kvdb.io/GihzLn9tKaS8UmwtTTnRhb/migration_<<parameters.workflow_id>>")
+            SUCCESS=$(curl --insecure "https://kvdb.io/20Rf4Rv264gPrqhkjeSfBEuf/migration_<<parameters.workflow_id>>")
             if(( $SUCCESS==1 )); 
             then
               cd ~/project/backend
@@ -275,7 +275,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "de:e7:ae:56:53:0e:a1:0b:48:33:40:12:4a:31:a9:55"
+            - "64:bc:da:18:62:62:7e:91:fd:b6:54:2e:64:a3:d0:31"
       - attach_workspace:
           at: ~/
     
@@ -307,7 +307,7 @@ jobs:
           command: |
             if grep -q "has been executed successfully." ~/project/backend/migrations_dump.txt
             then
-             curl --insecure https://kvdb.io/175Zr6uvPNnVcFfqwpqvcd1V/migration_${CIRCLE_WORKFLOW_ID:0:7}  -d '1'
+             curl --insecure https://kvdb.io/20Rf4Rv264gPrqhkjeSfBEuf/migration_${CIRCLE_WORKFLOW_ID:0:7}  -d '1'
             fi
       - destroy-environment 
       - revert-migrations
