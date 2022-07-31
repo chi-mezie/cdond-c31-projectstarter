@@ -437,8 +437,7 @@ jobs:
      
       - install_nodejs
       - install_awscli
-      - run:
-      
+      - run:    
           name: Backend smoke test.
           command: |
               BACKEND_PUBLIC_IP=$(aws ec2 describe-instances \
